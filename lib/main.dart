@@ -8,13 +8,12 @@ import 'package:newsly/screens/onbordingScreen.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      isToolbarVisible: true,
-      builder: (context) => const MyApp(),
-    ),
+      // DevicePreview(
+      //   isToolbarVisible: true,
+      //   builder: (context) => const MyApp(),
+      // ),
 
-    // const MyApp()
-  );
+      const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -29,12 +28,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Newsly',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
-        home: Newsdetailscreen(),
+        home: Onbordingscreen(),
       ),
     );
   }

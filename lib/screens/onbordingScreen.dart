@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newsly/screens/homeScreen.dart';
+import 'package:newsly/screens/mainScreen.dart';
 
 class Onbordingscreen extends StatefulWidget {
   const Onbordingscreen({super.key});
@@ -24,6 +26,9 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
 
   @override
   void initState() {
+    // TODO: implement initState
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom]);
     super.initState();
     Timer.periodic(Duration(seconds: 3), (timer) {
       setState(() {
@@ -48,6 +53,7 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
             opacity: _isVisible ? 1.0 : 0.0,
             duration: Duration(milliseconds: 500),
             child: Image.asset(
+              alignment: Alignment.center,
               images[_currentIndex],
               fit: BoxFit.cover,
               width: double.infinity,
@@ -76,7 +82,7 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
 
           // Text and Button
           Positioned(
-            bottom: 20,
+            bottom: 10,
             left: 20,
             right: 20,
             child: Container(
@@ -86,6 +92,7 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
+                    alignment: Alignment.center,
                     padding: EdgeInsets.symmetric(horizontal: 40.w),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -94,22 +101,25 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
                         Text(
                           "Stay Informed from Day One",
                           maxLines: 2,
+                          textAlign: TextAlign.justify,
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
+                              height: 1.h,
                               fontWeight: FontWeight.bold,
-                              fontSize: 30.sp, // Ajustement de taille
+                              fontSize: 32.sp, // Ajustement de taille
                               color: Colors.white, // Couleur du texte
                               letterSpacing: .5,
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 6.h),
                         Text(
                           "Discover the Latest News with our Seamless Onboarding Experience",
                           maxLines: 2,
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                              fontSize: 14.sp, // Ajustement de taille
+                              fontSize: 12.sp, // Ajustement de taille
                               color: Colors.white70, // Couleur du texte
                               letterSpacing: .5,
                             ),
@@ -128,7 +138,7 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
                           pageBuilder: (BuildContext context,
                               Animation<double> animation,
                               Animation<double> secondaryAnimation) {
-                            return Homescreen();
+                            return Mainscreen();
                           },
                           transitionsBuilder: (BuildContext context,
                               Animation<double> animation,
@@ -146,9 +156,9 @@ class _OnbordingscreenState extends State<Onbordingscreen> {
                     },
                     style: OutlinedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
-                          vertical: 20.w), // Uniforme et centré
-                      side: BorderSide(color: Colors.teal),
-                      backgroundColor: Colors.blueAccent,
+                          vertical: 10.w), // Uniforme et centré
+
+                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.circular(30.r), // Coins arrondis

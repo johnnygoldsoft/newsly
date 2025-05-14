@@ -23,69 +23,86 @@ class _MainscreenState extends State<Mainscreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        toolbarHeight: 65.h, // Hauteur de la barre d'application
         automaticallyImplyLeading: false,
         title: Container(
           padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
           decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(32.r)),
-          child: CircleAvatar(
-              radius: 20,
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(32.r),
+          ),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: CircleAvatar(
+              radius: 25,
               backgroundColor: Colors.white,
               child: Icon(
                 Icons.menu,
-                color: Colors.black,
+                color: Colors.black87,
                 size: 25,
-              )),
+              ),
+            ),
+          ),
         ),
         actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.0.w, vertical: 1.0.w),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
-              decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(32.r)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.black,
-                        size: 25,
-                      )),
-                  Stack(children: [
-                    CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Colors.white,
-                        child: Icon(
-                          Icons.notifications_none_outlined,
-                          color: Colors.black,
-                          size: 25,
-                        )),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: Container(
-                        padding: EdgeInsets.all(2.w),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 12,
-                          minHeight: 12,
-                        ),
-                      ),
-                    )
-                  ]),
-                ],
-              ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.w),
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(32.r),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.search_outlined,
+                      color: Colors.black87,
+                      size: 25,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 5.w),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Stack(
+                      children: [
+                        CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              Icons.notifications_outlined,
+                              color: Colors.black87,
+                              size: 30,
+                            )),
+                        Positioned(
+                          right: 14,
+                          top: 14,
+                          child: Container(
+                            padding: EdgeInsets.all(1.w),
+                            decoration: BoxDecoration(
+                              color: Colors.redAccent,
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            constraints: const BoxConstraints(
+                              minWidth: 8,
+                              minHeight: 8,
+                            ),
+                          ),
+                        )
+                      ],
+                    )),
+              ],
             ),
           ),
         ],
@@ -99,8 +116,8 @@ class _MainscreenState extends State<Mainscreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.compass_calibration),
+            label: 'discover',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.save),

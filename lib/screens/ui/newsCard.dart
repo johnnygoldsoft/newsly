@@ -81,7 +81,7 @@ class NewsCard extends StatelessWidget {
                         CircleAvatar(
                           radius: 8,
                           backgroundImage:
-                              AssetImage("assets/images/perso2.jpg"),
+                              AssetImage("assets/images/terre.png"),
                         ),
                         SizedBox(
                           width: 4.w,
@@ -90,7 +90,7 @@ class NewsCard extends StatelessWidget {
                           "World",
                           style: TextStyle(
                             fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ],
@@ -126,7 +126,7 @@ class NewsCard extends StatelessWidget {
                           CircleAvatar(
                             radius: 10,
                             backgroundImage:
-                                AssetImage("assets/images/perso2.jpg"),
+                                AssetImage("assets/images/cnn.png"),
                           ),
                           SizedBox(
                             width: 4.w,
@@ -147,7 +147,8 @@ class NewsCard extends StatelessWidget {
                         maxLines: 3,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16.sp,
                         ),
                       ),
                     ],

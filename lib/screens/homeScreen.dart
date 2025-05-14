@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsly/screens/ui/articleCard.dart';
-import 'package:newsly/screens/ui/categoryChip.dart';
 import 'package:newsly/screens/ui/newsCard.dart';
 
 class Homescreen extends StatefulWidget {
@@ -50,14 +48,14 @@ class _HomescreenState extends State<Homescreen> {
       'subtitle': 'Kristin Watson • Sports',
       'date': 'Feb 28, 2023',
       'category': 'Sports',
-      'image': 'assets/images/news1.jpg',
+      'image': 'assets/images/stade.jpg',
     },
     {
       'title': 'Major wildfires continue to ravage Australia\'s forests',
       'subtitle': 'Marvin McKinney • Nature',
       'date': 'Feb 26, 2023',
       'category': 'Nature',
-      'image': 'assets/images/news1.jpg',
+      'image': 'assets/images/route.jpeg',
     },
     {
       'title': 'New Education Policies for 2025: What You Need to Know',
@@ -87,6 +85,7 @@ class _HomescreenState extends State<Homescreen> {
     }).toList();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,6 +111,7 @@ class _HomescreenState extends State<Homescreen> {
                     "Show more",
                     style: TextStyle(
                       fontSize: 12.sp,
+                      color: Colors.black54,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -218,6 +218,7 @@ class _HomescreenState extends State<Homescreen> {
                     "Show More",
                     style: TextStyle(
                       fontSize: 12,
+                      color: Colors.black54,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
